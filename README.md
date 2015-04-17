@@ -8,6 +8,10 @@ script-security 2
 
 up /path_to_script
 
+Also need to define the vpn table value
+
+echo 200   vpn >> /etc/iproute2/rt_tables
+
 Redirect traffic per uid through openvpn tunnel
 
 When the vpn connection goes down the first entry at vpn table will disappear, leaving just a route to loopback, this will avoid the application to leak data through the main interface (eth0, the default gateway for the main table), since all packets outgoing from the app have a tracing mark
