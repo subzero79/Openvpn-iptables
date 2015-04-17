@@ -3,7 +3,9 @@
 In your .conf client file you need to add
 
 route-nopull
+
 script-security 2
+
 up /path_to_script
 
 Redirect traffic per uid through openvpn tunnel
