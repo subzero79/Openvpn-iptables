@@ -1,6 +1,7 @@
 # Openvpn-iptables
 
 In your .conf client file you need to add
+
 route-nopull
 script-security 2
 up /path_to_script
@@ -16,3 +17,6 @@ Notes
 - Once reboot the iptables will be gone, you can install iptables-persistant to save them so they will be there to prevent leakage. In case the vpn fails to start.
 
 - once the vpn is connected you can ensure the application is going out through VPN observing the traffic increase in tun0, also iftop -i tun0 -P should indicate out/in connections in that interface. This webpage also will say if the application has a different outgoing WAN IP http://checkmytorrentip.net/
+
+
+Reference: https://www.niftiestsoftware.com/2011/08/28/making-all-network-traffic-for-a-linux-user-use-a-specific-network-interface/ 
