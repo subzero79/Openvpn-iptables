@@ -40,7 +40,7 @@ iptables -A OUTPUT ! --src $LANIP -o $NETIF -j REJECT
 export GATEWAYIP=`ifconfig tun0 | grep 'inet addr:' | cut -d: -f3 | awk '{print $1}'` 
 
 if [[ `ip rule list | grep -c 0x1` == 0 ]]; then
- ip rule add from all fwmark 0x1 lookup $VPNUSER
+ ip rule add from all fwmark 0x1 lookup $VPNTABLE
 fi
 
 ip route flush table $VPNTABLE
